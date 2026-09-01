@@ -28,31 +28,71 @@
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Cairo', sans-serif; }
-        body { background-color: var(--bg); color: var(--text-main); min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 30px 15px; }
+        
+        body { 
+            background-color: var(--bg); 
+            color: var(--text-main); 
+            min-height: 100vh; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            padding: 20px 10px; 
+        }
 
-        .app-card { background: var(--surface); width: 100%; max-width: 950px; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); border: 1px solid var(--border); overflow: hidden; }
+        .app-card { 
+            background: var(--surface); 
+            width: 100%; 
+            max-width: 950px; 
+            border-radius: var(--radius-lg); 
+            box-shadow: var(--shadow-lg); 
+            border: 1px solid var(--border); 
+            overflow: hidden; 
+        }
         
         .card-header {
             background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-            padding: 24px 36px; color: #ffffff; text-align: center; position: relative;
-            display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
+            padding: 24px 20px; 
+            color: #ffffff; 
+            text-align: center; 
+            position: relative;
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+            gap: 10px;
         }
-        .card-header::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--primary), #3b82f6); }
+        .card-header::after { 
+            content: ''; 
+            position: absolute; 
+            bottom: 0; 
+            left: 0; 
+            right: 0; 
+            height: 4px; 
+            background: linear-gradient(90deg, var(--primary), #3b82f6); 
+        }
         
         .brand-logo {
-            width: 75px; height: 75px; border-radius: 50%; object-fit: cover;
+            width: 70px; 
+            height: 70px; 
+            border-radius: 50%; 
+            object-fit: cover;
             border: 3px solid rgba(255, 255, 255, 0.8);
             box-shadow: 0 4px 12px rgba(0,0,0,0.3);
             background-color: #fff;
         }
 
-        .card-header h1 { font-size: 22px; font-weight: 700; }
-        .card-header p { font-size: 13px; color: #94a3b8; }
+        .card-header h1 { font-size: 20px; font-weight: 700; }
+        .card-header p { font-size: 12px; color: #94a3b8; }
 
-        .card-body { padding: 32px; }
+        .card-body { padding: 24px 16px; }
 
-        .form-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-bottom: 24px; }
-        @media (max-width: 768px) { .form-grid { grid-template-columns: 1fr; } }
+        /* الشبكة وتجاوبها مع كافة الشاشات */
+        .form-grid { 
+            display: grid; 
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 16px; 
+            margin-bottom: 24px; 
+        }
 
         .form-group { display: flex; flex-direction: column; gap: 6px; }
         .form-group.span-2 { grid-column: span 2; }
@@ -62,69 +102,128 @@
         label i { color: var(--primary); }
 
         input, select, textarea {
-            width: 100%; padding: 10px 14px; border: 1.5px solid var(--border); border-radius: var(--radius-md);
-            font-size: 14px; color: var(--text-main); background-color: #ffffff; outline: none; transition: var(--transition);
+            width: 100%; 
+            padding: 10px 12px; 
+            border: 1.5px solid var(--border); 
+            border-radius: var(--radius-md);
+            font-size: 13px; 
+            color: var(--text-main); 
+            background-color: #ffffff; 
+            outline: none; 
+            transition: var(--transition);
         }
-        input:focus, select:focus, textarea:focus { border-color: var(--primary); box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1); }
+        input:focus, select:focus, textarea:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1); }
         input[readonly] { background-color: var(--bg); color: var(--text-muted); font-weight: 700; cursor: not-allowed; }
 
         .image-preview-card {
-            display: flex; align-items: center; gap: 15px; padding: 12px; border: 1px solid var(--border);
-            border-radius: var(--radius-md); background: #fafafa; margin-bottom: 24px;
+            display: flex; 
+            align-items: center; 
+            gap: 12px; 
+            padding: 12px; 
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md); 
+            background: #fafafa; 
+            margin-bottom: 20px;
         }
-        .image-preview-card img { width: 70px; height: 70px; object-fit: cover; border-radius: 8px; border: 1px solid var(--border); }
+        .image-preview-card img { width: 60px; height: 60px; object-fit: cover; border-radius: 8px; border: 1px solid var(--border); }
         
         .section-header {
-            display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 10px;
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            margin-bottom: 12px; 
+            flex-wrap: wrap; 
+            gap: 10px;
         }
-        .section-title { font-size: 15px; font-weight: 700; color: var(--text-main); display: flex; align-items: center; gap: 8px; }
+        .section-title { font-size: 14px; font-weight: 700; color: var(--text-main); display: flex; align-items: center; gap: 8px; }
 
-        /* شريط الإضافة بعد إلغاء حقل الكود الإختياري */
+        /* شريط الإضافة المتجاوب مع كافة أحجام الشاشات */
         .add-comp-box {
             background-color: #f8fafc;
             border: 1px dashed var(--primary);
-            padding: 16px;
+            padding: 14px;
             border-radius: var(--radius-md);
             margin-bottom: 18px;
             display: flex;
             gap: 12px;
             align-items: flex-end;
-            flex-wrap: wrap;
         }
-        .add-comp-box .form-group { flex: 1; min-width: 150px; }
+        .add-comp-search-group { flex: 3; }
+        .add-comp-qty-group { flex: 1; min-width: 90px; }
 
-        .table-wrapper { border: 1px solid var(--border); border-radius: var(--radius-md); overflow: hidden; margin-bottom: 24px; }
-        .comp-table { width: 100%; border-collapse: collapse; text-align: right; font-size: 13px; }
-        .comp-table th { background-color: #f8fafc; padding: 10px 14px; color: var(--text-muted); font-weight: 700; border-bottom: 1px solid var(--border); }
-        .comp-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: middle; }
-        .comp-table img { width: 45px; height: 45px; object-fit: cover; border-radius: 6px; border: 1px solid var(--border); }
+        /* تجاوب الجدول على الشاشات الصغرى */
+        .table-wrapper { 
+            border: 1px solid var(--border); 
+            border-radius: var(--radius-md); 
+            overflow-x: auto; 
+            margin-bottom: 24px; 
+            -webkit-overflow-scrolling: touch;
+        }
+        .comp-table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            text-align: right; 
+            font-size: 13px; 
+            min-width: 600px; /* ضمان الحفاظ على الهيكل مع التمرير الأفقي للهواتف */
+        }
+        .comp-table th { background-color: #f8fafc; padding: 10px 12px; color: var(--text-muted); font-weight: 700; border-bottom: 1px solid var(--border); white-space: nowrap; }
+        .comp-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: middle; white-space: nowrap; }
+        .comp-table img { width: 40px; height: 40px; object-fit: cover; border-radius: 6px; border: 1px solid var(--border); }
 
-        .table-input { padding: 6px 10px; width: 90px; text-align: center; }
+        .table-input { padding: 6px 8px; width: 80px; text-align: center; }
 
         .btn-danger {
             background-color: #fee2e2; color: var(--danger-dark); border: 1px solid #fca5a5;
-            padding: 6px 12px; border-radius: 6px; cursor: pointer; transition: var(--transition); font-weight: 600;
+            padding: 6px 10px; border-radius: 6px; cursor: pointer; transition: var(--transition); font-weight: 600; font-size: 12px;
         }
         .btn-danger:hover { background-color: var(--danger); color: #fff; }
 
         .btn-primary-action {
             background-color: var(--primary); color: #fff; border: none;
-            padding: 10px 18px; border-radius: var(--radius-md); cursor: pointer; transition: var(--transition); font-weight: 700; font-size: 14px;
-            display: flex; align-items: center; gap: 8px; height: 43px;
+            padding: 10px 16px; border-radius: var(--radius-md); cursor: pointer; transition: var(--transition); font-weight: 700; font-size: 13px;
+            display: flex; align-items: center; justify-content: center; gap: 6px; height: 41px; white-space: nowrap;
         }
         .btn-primary-action:hover { background-color: var(--primary-dark); }
 
         .submit-btn {
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            color: #ffffff; border: none; border-radius: var(--radius-md); padding: 14px 28px; font-size: 16px;
+            color: #ffffff; border: none; border-radius: var(--radius-md); padding: 12px 24px; font-size: 15px;
             font-weight: 700; cursor: pointer; width: 100%; display: flex; align-items: center; justify-content: center;
-            gap: 10px; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25); transition: var(--transition);
+            gap: 8px; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25); transition: var(--transition);
         }
         .submit-btn:hover { transform: translateY(-1px); }
         .submit-btn:disabled { opacity: 0.7; cursor: not-allowed; }
 
-        .spinner { display: none; width: 20px; height: 20px; border: 3px solid rgba(255, 255, 255, 0.3); border-radius: 50%; border-top-color: #fff; animation: spin 0.8s linear infinite; }
+        .spinner { display: none; width: 18px; height: 18px; border: 3px solid rgba(255, 255, 255, 0.3); border-radius: 50%; border-top-color: #fff; animation: spin 0.8s linear infinite; }
         @keyframes spin { to { transform: rotate(360deg); } }
+
+        /* ========================================= */
+        /* Media Queries للمجال المتجاوب Responsive   */
+        /* ========================================= */
+
+        @media (max-width: 768px) {
+            body { padding: 10px 6px; }
+            .card-body { padding: 18px 12px; }
+
+            .form-grid { 
+                grid-template-columns: 1fr; 
+                gap: 12px; 
+            }
+            .form-group.span-2 { grid-column: auto; }
+
+            .add-comp-box {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 10px;
+                padding: 12px;
+            }
+            .add-comp-search-group, .add-comp-qty-group {
+                width: 100%;
+            }
+            .btn-primary-action {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -201,10 +300,10 @@
 
             <!-- معاينة صورة الطقم المختار -->
             <div class="image-preview-card" id="comboImgBox" style="display: none;">
-                <img id="comboImgPreview" src="" alt="صورة الطقم" onerror="this.onerror=null; this.src='https://via.placeholder.com/70?text=لا+توجد+صورة';">
+                <img id="comboImgPreview" src="" alt="صورة الطقم" onerror="this.onerror=null; this.src='https://via.placeholder.com/60?text=لا+صورة';">
                 <div>
-                    <div style="font-weight: 700; font-size: 14px;" id="comboImgTitle">صورة الطقم الرئيسية</div>
-                    <div style="font-size: 12px; color: var(--text-muted);" id="comboImgUrlText">تم جلب الصورة تلقائياً من شيت الأطقم دون إعادة رفعها</div>
+                    <div style="font-weight: 700; font-size: 13px;" id="comboImgTitle">صورة الطقم الرئيسية</div>
+                    <div style="font-size: 11px; color: var(--text-muted);" id="comboImgUrlText">تم جلب الصورة تلقائياً من شيت الأطقم</div>
                 </div>
             </div>
 
@@ -212,19 +311,19 @@
             <div class="section-header">
                 <div class="section-title">
                     <i class="fa-solid fa-list-check" style="color: var(--primary);"></i>
-                    مكونات الطقم (يمكنك التعديل أو البحث وإضافة مكونات جديدة)
+                    مكونات الطقم (يمكنك التعديل أو البحث وإضافة مكونات)
                 </div>
             </div>
 
-            <!-- 🆕 شريط البحث والإضافة اليدوية لمكون جديد بدون حقل الكود -->
+            <!-- شريط البحث والإضافة اليدوية لمكون جديد المتجاوِب -->
             <div class="add-comp-box">
-                <div class="form-group" style="flex: 3;">
+                <div class="form-group add-comp-search-group">
                     <label for="newCompSearch"><i class="fa-solid fa-magnifying-glass"></i> ابحث عن مكون أو اكتب اسمه</label>
-                    <input type="text" id="newCompSearch" list="allComponentsList" placeholder="اكتب اسم أو كود المكون للتصفح والإضافة...">
+                    <input type="text" id="newCompSearch" list="allComponentsList" placeholder="اكتب اسم أو كود المكون للإضافة...">
                     <datalist id="allComponentsList"></datalist>
                 </div>
 
-                <div class="form-group" style="flex: 1;">
+                <div class="form-group add-comp-qty-group">
                     <label for="newCompQty"><i class="fa-solid fa-cubes"></i> الكمية للطقم</label>
                     <input type="number" id="newCompQty" min="1" value="1">
                 </div>
@@ -234,7 +333,7 @@
                 </button>
             </div>
 
-            <!-- جدول عرض المكونات -->
+            <!-- جدول عرض المكونات القابل للتمرير الأفقي بالشاشات الصغيرة -->
             <div class="table-wrapper">
                 <table class="comp-table">
                     <thead>
@@ -267,7 +366,7 @@
     const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw5d-o6Rf_l7i1LiI3FsY16JJ6C9h6wUK1gjDcOfJdRFZePmdHKKxIZ_gyo1ffI2hWd/exec";
 
     let combosMap = {};
-    let globalCompMap = new Map(); // قواميس لحفظ المكونات المسجلة سابقاً للتعرف على أكوادها تلقائياً
+    let globalCompMap = new Map();
     let currentComponents = []; 
 
     function fixDriveUrl(url) {
@@ -401,12 +500,12 @@
                 <td><strong>${comp.code || '-'}</strong></td>
                 <td><span style="font-weight: 600; color: #1e293b;">${comp.name}</span></td>
                 <td>
-                    ${compImg ? `<img src="${compImg}" alt="${comp.name}" onerror="this.onerror=null; this.src='https://via.placeholder.com/45?text=لا+توجد+صورة';">` : '<span style="color:#94a3b8">لا توجد صورة</span>'}
+                    ${compImg ? `<img src="${compImg}" alt="${comp.name}" onerror="this.onerror=null; this.src='https://via.placeholder.com/40?text=لا+صورة';">` : '<span style="color:#94a3b8">لا توجد صورة</span>'}
                 </td>
                 <td>
                     <input type="number" class="table-input" min="1" value="${comp.qtyPerCombo}" onchange="updateCompQty(${index}, this.value)">
                 </td>
-                <td><strong style="color: var(--primary); font-size: 15px;">${totalQty}</strong></td>
+                <td><strong style="color: var(--primary); font-size: 14px;">${totalQty}</strong></td>
                 <td>
                     <button type="button" class="btn-danger" onclick="removeComponent(${index})">
                         <i class="fa-solid fa-trash-can"></i> حذف
@@ -430,7 +529,7 @@
         renderComponentsTable();
     }
 
-    // 🆕 إضافة مكون جديد مع توليد الكود أو جلبه تلقائياً
+    // 🆕 إضافة مكون جديد مع توليد الكود تلقائياً
     function addNewComponentFromBar() {
         const nameInput = document.getElementById('newCompSearch');
         const qtyInput = document.getElementById('newCompQty');
@@ -447,13 +546,11 @@
         let compCode = '';
         let compImage = '';
 
-        // البحث إذا كان المكون مسجلاً سابقاً لمعرفة كوده وصورته
         if (globalCompMap.has(compName)) {
             const existing = globalCompMap.get(compName);
             compCode = existing.code || '';
             compImage = existing.image || '';
         } else {
-            // توليد كود تلقائي في حال كان المكون جديداً تماماً غير مسجل
             compCode = 'NEW-' + Math.floor(1000 + Math.random() * 9000);
         }
 
@@ -466,7 +563,6 @@
 
         renderComponentsTable();
 
-        // إعادة تفريغ حقل البحث للإضافة التالية
         nameInput.value = '';
         qtyInput.value = '1';
     }
